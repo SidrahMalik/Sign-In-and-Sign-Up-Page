@@ -3,8 +3,7 @@ Front end work having only sign in and sign up page.
 <br>
 # Sign-Up-Page
 <br>
-# Having-Empty-Fields Initially.
-<br>
+# Having-Empty-Fields Initially
 ![image](https://github.com/SidrahMalik/Sign-In-and-Sign-Up-Page/assets/158201665/8029a5ee-8e3e-4bea-9da2-aaeaf48962ab)
 <br>
 # Adding data and signed up we can go to sign in page now.
