@@ -17,7 +17,8 @@ Initially empty Fields.
 ![image](https://github.com/SidrahMalik/Sign-In-and-Sign-Up-Page/assets/158201665/100b7fa1-9a93-4757-a3f1-8320762784cd)
 <br>
 # Adding data now
-"C:\Users\ABC\Desktop\last.png"
+<br>
+C:\Users\ABC\Desktop\last.png
 
 
 
