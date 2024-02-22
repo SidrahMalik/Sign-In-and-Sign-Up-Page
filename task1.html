@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In and Sign Up Form</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/7553930421.js" crossorigin="anonymous"></script>
+    <style>
+        /* Add your CSS styles here */
+        .invalid {
+            border-color: red;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="form-box">
+        <h1 id="title">Sign Up</h1>
+        <form onsubmit="return submitForm()">
+            <div class="input-group" id="signupFields">
+                <!-- Fields for Sign Up -->
+                <div class="input-field" id="nameField">
+                    <i class="fa-regular fa-circle-user"></i>
+                    <input type="text" placeholder="Full Name" required> 
+                </div>
+
+                <div class="input-field">
+                    <i class="fa-solid fa-at"></i>
+                    <input type="email" placeholder="Email" required> 
+                </div>
+
+                <div class="input-field">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" placeholder="Password" required> 
+                </div>
+
+                <div class="input-field">
+                    <i class="fa-regular fa-calendar"></i>
+                    <input type="date" placeholder="Date of Birth" required> 
+                </div>
+
+                <div class="input-field">
+                    <i class="fa-regular fa-address-book"></i>
+                    <input type="tel" placeholder="Contact Number" required> 
+                </div>
+
+                <div class="input-field">
+                    <input type="radio" name="gender" id="male">
+                    <label for="male">Male</label>
+                    <input type="radio" name="gender" id="female">
+                    <label for="female">Female</label>
+                    <input type="radio" name="gender" id="other">
+                    <label for="other">Other</label>
+                </div>
+
+                <div class="input-field">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms">I agree to the Terms and Conditions</label>
+                </div>
+
+                <div class="input-field">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <textarea placeholder="Address" required></textarea>
+                </div>
+            </div>
+            <!-- Fields for Sign In -->
+            <div class="input-group" id="signinFields" style="display:none;">
+                <div class="input-field">
+                    <i class="fa-solid fa-at"></i>
+                    <input type="email" placeholder="Email" required> 
+                </div>
+
+                <div class="input-field">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" placeholder="Password" required> 
+                </div>
+                <p>Forgot Password <a href="#">Click Here!</a></p>  
+            </div>        
+            <div class="btn-field">
+                <button type="button" id="signupBtn">Sign up</button>
+                <button type="button" id="signinBtn" class="disable">Sign in</button>
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+    let signupBtn = document.getElementById("signupBtn");
+    let signinBtn = document.getElementById("signinBtn");
+    let signupFields = document.getElementById("signupFields");
+    let signinFields = document.getElementById("signinFields");
+    let title = document.getElementById("title");
+
+    signinBtn.onclick = function(){
+        signupFields.style.display = "none";
+        signinFields.style.display = "block";
+        title.innerHTML="Sign In";
+        signinBtn.classList.add("disable");
+        signupBtn.classList.remove("disable");
+    }
+
+    signupBtn.onclick = function(){
+        signupFields.style.display = "block";
+        signinFields.style.display = "none";
+        title.innerHTML="Sign Up";
+        signupBtn.classList.add("disable");
+        signinBtn.classList.remove("disable");
+    }
+
+    function validateEmail(email) {
+        const re = /\S+@\S+\.\S+/;
+        return re.test(email);
+    }
+
+    function submitForm() {
+        const inputs = document.querySelectorAll('input[type="text"], input[type="email"], input[type="password"], input[type="date"], input[type="tel"], textarea');
+        let isValid = true;
+
+        inputs.forEach(input => {
+            if (input.hasAttribute('required') && input.value.trim() === '') {
+                isValid = false;
+                input.classList.add('invalid');
+                input.addEventListener('input', function () {
+                    input.classList.remove('invalid');
+                });
+            }
+
+            if (input.type === 'email' && input.value.trim() !== '' && !validateEmail(input.value)) {
+                isValid = false;
+                input.classList.add('invalid');
+                input.addEventListener('input', function () {
+                    input.classList.remove('invalid');
+                });
+            }
+        });
+
+        if (!isValid) {
+            alert('Please fill in all required fields with valid data.');
+            return false;
+        }
+    }
+</script>
+</body>
+</html>
