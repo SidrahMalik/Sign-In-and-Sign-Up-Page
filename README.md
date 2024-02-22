@@ -18,7 +18,7 @@ Initially empty Fields.
 <br>
 # Adding data now
 <br>
-C:\Users\ABC\Desktop\last.png
+
 
 
 
