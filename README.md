@@ -16,9 +16,8 @@ Initially empty Fields.
 <br>
 ![image](https://github.com/SidrahMalik/Sign-In-and-Sign-Up-Page/assets/158201665/100b7fa1-9a93-4757-a3f1-8320762784cd)
 <br>
-# Adding data now.
-<br>
-![image](https://github.com/SidrahMalik/Sign-In-and-Sign-Up-Page/assets/158201665/2c7f4972-44b5-4ec5-b997-9797fd7bf7da)
+# Adding data now
+"C:\Users\ABC\Desktop\last.png"
 
 
 
